@@ -1,0 +1,60 @@
+/* hero section css start */
+.hero {
+  padding-top: 250px;
+  padding-bottom: 187px;
+}/* hero section css end */
+
+
+/* inner hero section css start */
+.inner-hero {
+  padding-top: 150px;
+  padding-bottom: 70px;
+  @extend %position-relative;
+  @extend %z-index-p;
+  &::before {
+    @extend %position-absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    @extend %w-100;
+    @extend %h-100;
+    @extend %base-color-two;
+    opacity: 0.65;
+    @extend %z-index-c;
+  }
+}
+.page-breadcrumb {
+  @include d-flex;
+  margin-top: 15px;
+  li {
+    color: rgba(#ffffff, 0.8);
+    text-transform: capitalize;
+    &::after {
+      content: '-';
+      color: #ffffff;
+      margin: 0 5px;
+    }
+    &:first-child {
+      &::before {
+        content: "\f015";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        color: $base-color;
+        margin-right: 6px;
+      }
+    }
+    &:last-child {
+      &::after {
+        display: none;
+      }
+    }
+    a {
+      color: #ffffff;
+      text-transform: capitalize;
+      &:hover {
+        color: $base-color;
+      }
+    }
+  }
+}
+/* inner hero section css end */

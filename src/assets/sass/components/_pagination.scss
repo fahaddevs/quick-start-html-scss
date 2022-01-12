@@ -1,0 +1,32 @@
+.pagination {
+  margin: rem(-5px) rem(-7px);
+  flex-wrap: wrap;
+  margin-top: rem(20px);
+  justify-content: flex-end;
+  .page-item {
+    margin: rem(5px) rem(7px);
+    &.active {
+      .page-link {
+        background-color: $base-color;
+        color: #fff;
+        border-color: $base-color;
+      }
+    }
+    .page-link {
+      width: rem(38px);
+      height: rem(38px);
+      @extend %bg-white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include border-radius(5px);
+      border: 1px solid rgba(#000, 0.15);
+      color: $para-color;
+      &:hover {
+        background-color: $base-color;
+        border-color: $base-color;
+        color: #fff;
+      }
+    }
+  }
+}

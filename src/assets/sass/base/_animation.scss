@@ -1,0 +1,152 @@
+.shake {
+  animation: shake 0.5s 1 linear;
+}
+@include keyframes (shake) {
+  0%,
+  100% {
+    @include transform(translateX(0));
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    @include transform(translateX(-10px));
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    @include transform(translateX(10px));
+  }
+}
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+
+  animation-name: fadeInUp;
+}
+@include keyframes (fadeInUp) {
+  0% {
+    opacity: 0;
+
+    -webkit-transform: translateY(20px);
+
+    -ms-transform: translateY(20px);
+
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+
+    -webkit-transform: translateY(0);
+
+    -ms-transform: translateY(0);
+
+    transform: translateY(0);
+  }
+}
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+
+  animation-name: fadeInLeft;
+}
+@include keyframes (fadeInLeft) {
+  0% {
+    opacity: 0;
+
+    -webkit-transform: translateX(-20px);
+
+    -ms-transform: translateX(-20px);
+
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+
+    -webkit-transform: translateX(0);
+
+    -ms-transform: translateX(0);
+
+    transform: translateX(0);
+  }
+}
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+
+  animation-name: fadeInRight;
+}
+@include keyframes (fadeInRight) {
+  0% {
+    opacity: 0;
+
+    -webkit-transform: translateX(20px);
+
+    -ms-transform: translateX(20px);
+
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+
+    -webkit-transform: translateX(0);
+
+    -ms-transform: translateX(0);
+
+    transform: translateX(0);
+  }
+}
+.slideInLeft {
+  -webkit-animation-name: slideInLeft;
+
+  animation-name: slideInLeft;
+}
+@include keyframes(slideInLeft) {
+  0% {
+    opacity: 0;
+
+    -webkit-transform: translateX(-2000px);
+
+    transform: translateX(-2000px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+
+    transform: translateX(0);
+  }
+}
+.slideInRight {
+  -webkit-animation-name: slideInRight;
+
+  animation-name: slideInRight;
+}
+@include keyframes(slideInRight) {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+
+    transform: translate3d(100%, 0, 0);
+
+    visibility: visible;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInUp {
+  -webkit-animation-name: slideInUp;
+  animation-name: slideInUp;
+}
+
+@include keyframes(slideInUp) {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}

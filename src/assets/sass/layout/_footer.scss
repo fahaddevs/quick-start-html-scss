@@ -1,0 +1,107 @@
+/* footer sectioncss start */
+.footer {
+  @extend %position-relative;
+  @extend %base-color-two;
+  @extend %overflow-hidden;
+  @extend %z-index-p;
+  p, span, a {
+    color: rgba(#fff, 0.8);
+  }
+  &__top {
+    padding: rem(50px) 0;
+  }
+  &__logo {
+    img {
+      max-height: 50px;
+      max-width: 200px;
+    }
+  }
+  &__bottom {
+    padding: rem(15px) 0;
+    border-top: 1px solid rgba(#fff, 0.15);
+  }
+}
+
+.inline-menu {
+  margin: rem(-5px) rem(-10px);
+  li {
+    padding: rem(5px) rem(10px);
+    a {
+      @extend %transition;
+      &:hover {
+        @extend %text-base;
+      }
+    }
+  }
+}
+.social-links {
+  margin: rem(-2px) rem(-7px);
+  li {
+    padding: rem(2px) rem(7px);
+    font-size: rem(18px);
+    a {
+      width: 35px;
+      height: 35px;
+      background-color: rgba(#fff, 0.05);
+      border: 1px solid rgba(#fff, 0.15);
+      @extend %bs-50;
+      @extend %d-flex;
+      @extend %align-center;
+      @extend %justify-center;
+      @extend %transition;
+      &:hover {
+        @extend %base-color;
+        border-color: $base-color;
+      }
+    }
+  }
+}
+
+.footer-widget {
+  &__title {
+    font-size: rem(18px);
+    @extend %position-relative;
+    &::after {
+      @extend %position-absolute;
+      content: '';
+      bottom: 0;
+      left: 0;
+      width: 35px;
+    }
+  }
+  &__menu {
+    margin-top: rem(20px);
+    li {
+      &:last-child {
+        a {
+          border-bottom: none;
+        }
+      }
+      a {
+        padding: rem(10px) 0;
+        border-bottom: 1px solid rgba(#fff, 0.1);
+        display: block;
+        &:hover {
+          @extend %text-base;
+        }
+      }
+    }
+  }
+  &__contact-list {
+    li {
+      padding: rem(10px) 0;
+      @extend %d-flex;
+      @extend %align-center;
+      .icon {
+        width: 40px;
+        @extend %text-base;
+        font-size: rem(24px);
+        line-height: 1;
+      }
+      .content {
+        width: calc(100% - 40px);
+      }
+    }
+  }
+}
+/* footer sectioncss end */ 

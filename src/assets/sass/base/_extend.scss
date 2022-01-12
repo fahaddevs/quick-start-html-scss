@@ -1,0 +1,92 @@
+%position-relative {
+  position: relative;
+}
+%position-absolute {
+  position: absolute;
+}
+%position {
+  @include position;
+}
+%positionTwo {
+  @include positionTwo;
+}
+%z-index-p {
+  z-index: 1;
+}
+%z-index-c {
+  z-index: -1;
+}
+%transition {
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+%base-color {
+  background-color: $base-color;
+}
+%base-color-two {
+  background-color: $base-color-two;
+}
+%bg-white {
+  background-color: #fff;
+}
+%bg-gradi {
+  @include grad-one;
+}
+%text-base {
+  color: $base-color;
+}
+%text-white {
+  color: #fff;
+}
+%text-h {
+  color: $heading-color;
+}
+%text-p {
+  color: $para-color;
+}
+%obj-fit {
+  @include object-fit;
+}
+%d-flex {
+  @include d-flex;
+}
+%justify-center {
+  justify-content: center;
+}
+%align-center {
+  align-items: center;
+}
+%d-inline-block {
+  display: inline-block;
+}
+%d-inline-flex {
+  display: inline-flex;
+}
+%overflow-hidden {
+  overflow: hidden;
+}
+%w-100 {
+  width: 100%;
+}
+%h-100 {
+  height: 100%;
+}
+%trans-y {
+  @include transform(translateY(-5px));
+}
+%text-center {
+  text-align: center;
+}
+%bs-5 {
+  @include border-radius(5px);
+}
+%bs-8 {
+  @include border-radius(8px);
+}
+%bs-10 {
+  @include border-radius(10px);
+}
+%bs-50 {
+  @include border-radius(50%);
+}

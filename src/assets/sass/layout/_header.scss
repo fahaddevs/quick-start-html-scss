@@ -1,0 +1,326 @@
+/* header start */
+.header {
+  @extend %position-relative;
+  z-index: 9;
+  &__bottom {
+    @extend %base-color-two;
+    padding: 0 30px;
+    @include media(1199px) {
+      padding: rem(10px) 0;
+    }
+  }
+  .site-logo {
+    img {
+      max-width: rem(200px);
+      max-height: rem(50px);
+      @include media(1199px) {
+        max-width: rem(150px);
+      }
+    }
+    &.site-title {
+      font-size: rem(24px);
+      @extend %text-base;
+    }
+  }
+  .main-menu {
+    margin-left: rem(70px);
+    @include media(1199px) {
+      margin-left: 0;
+      padding: rem(15px) 0;
+    }
+    li {
+      position: relative;
+      @include media(1199px) {
+        border-bottom: 1px solid rgba(#ffffff, 0.15);
+      }
+      &:last-child {
+        a {
+          padding-right: 0;
+        }
+      }
+      &.menu_has_children {
+        position: relative;
+        &.open {
+          > .sub-menu {
+            display: block;
+          }
+        }
+        > a {
+          padding-right: rem(25px);
+          @include media(1199px) {
+            display: block;
+          }
+          &::before {
+            position: absolute;
+            content: "\f107";
+            font-family: "Line Awesome Free";
+            font-weight: 900;
+            top: rem(31px);
+            right: 5px;
+            color: #fff;
+            font-size: rem(14px);
+            @extend %transition;
+            @include media(1199px) {
+              display: block;
+              top: rem(9px);
+              color: #fff;
+            }
+          }
+        }
+        &:hover {
+          > a::before {
+            color: $base-color;
+            @include transform(rotate(180deg));
+          }
+        }
+      }
+      a {
+        font-family: $para-font;
+        font-weight: 500;
+        padding: rem(28px) rem(15px) rem(28px) 0;
+        color: #fff;
+        &.active {
+          @extend %text-base;
+        }
+        @include media(1199px) {
+          color: #fff;
+          padding: rem(8px) 0;
+          display: block;
+        }
+        &:hover,
+        &:focus {
+          color: $base-color;
+        }
+      }
+      .sub-menu {
+        position: absolute;
+        width: 220px;
+        top: 105%;
+        left: 0;
+        z-index: 9999;
+        @extend %bg-white;
+        padding: rem(10px) 0;
+        box-shadow: 0px 5px 15px 0 rgba(0,0,0,0.1);
+        @extend %bs-5;
+        @extend %transition;
+        opacity: 0;
+        visibility: hidden;
+        @include media(1199px) {
+          opacity: 1;
+          visibility: visible;
+          display: none;
+          position: static;
+          @include transition(none);
+          width: 100%;
+          background-color: $base-color-two;
+          border: none;
+          padding-left: rem(15px);
+          padding-top: 0;
+        }
+        li {
+          border-bottom: 1px dashed rgba(#fff, 0.25);
+          @include media(1199px) {
+            border-color: rgba(#fff, 0.15);
+          }
+          &:last-child {
+            border-bottom: none;
+          }
+          a {
+            padding: rem(6px) rem(25px);
+            display: block;
+            color: $para-color;
+            position: relative;
+            font-size: rem(15px);
+            text-transform: capitalize;
+            @extend %transition;
+            @include media(1199px) {
+              color: #fff;
+              padding: rem(8px) rem(0);
+            }
+            &:hover {
+              @extend %text-base;
+            }
+          }
+        }
+        li + li {
+          margin-left: 0;
+        }
+      }
+      &:hover > .sub-menu {
+        top: 100%;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    li + li {
+      margin-left: rem(20px);
+      @include media(1199px) {
+        margin-left: 0;
+      }
+    }
+    .sub-menu {
+      li.menu_has_children {
+        > a {
+          &::before {
+            top: 9px;
+            right: 8px;
+          }
+        }
+        > .sub-menu {
+          left: 100%;
+          top: 0;
+          @include media(1199px) {
+            padding-left: 15px;
+          }
+        }
+      }
+    }
+  }
+  .nav-right {
+    padding-left: rem(50px);
+    @include d-flex;
+    align-items: center;
+    @include media(1199px) {
+      padding-left: 0;
+    }
+  }
+  &__search-btn {
+    background-color: transparent;
+    padding: 0;
+    @extend %text-white;
+    font-size: rem(22px);
+    margin-right: rem(20px);
+    @include media(1199px) {
+      display: none;
+    }
+    i {
+      &::before {
+        @extend %transition;
+      }
+    }
+    &.active {
+      i {
+        transform: rotate(0);
+        &::before {
+          content: "\f00d";
+        }
+      }
+    }
+  }
+}
+.language-select {
+  background-color: transparent;
+  border: none;
+  font-size: rem(14px);
+  padding: 0;
+  @extend %text-white;
+  margin-right: rem(15px);
+  option {
+    @extend %text-h;
+  }
+}
+.header-account-btn {
+  padding: rem(8px) rem(15px);
+  @extend %d-inline-flex;
+  @extend %align-center;
+  @extend %justify-center;
+  @extend %text-white;
+  font-size: 14px;
+  @extend %base-color;
+  @extend %bs-5;
+  @extend %transition;
+  &:hover {
+    background-color: darken($base-color, 8%);
+    @extend %text-white;
+  }
+  i {
+    font-size: rem(15px);
+    margin-right: rem(8px);
+    width: 22px;
+    height: 22px;
+    background-color: rgba(#fff, 0.25);
+    @extend %bs-50;
+    @extend %d-inline-flex;
+    @extend %align-center;
+    @extend %justify-center;
+  }
+}
+.navbar-collapse {
+  @include media(1199px) {
+    margin-top: 20px !important;
+    background-color: $base-color-two;
+    padding: 0 rem(30px) rem(20px) rem(30px);
+  }
+  @include media(767px) {
+    max-height: rem(320px);
+    overflow: auto;
+  }
+}
+.navbar-toggler {
+  padding: 0;
+  border: none;
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+.menu-toggle {
+  margin: 10px 0;
+  position: relative;
+  display: block;
+  width: rem(35px);
+  height: rem(20px);
+  cursor: pointer;
+  background: transparent;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  color: #fff;
+  font-size: 0;
+  @include transition(all 0.25s ease-in-out);
+  cursor: pointer;
+}
+.menu-toggle:before,
+.menu-toggle:after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: currentColor;
+  @include transform(translate(-50%, -50%));
+  transition: -webkit-transform 0.25s ease-in-out;
+  -webkit-transition: -webkit-transform 0.25s ease-in-out;
+  -o-transition: -webkit-transform 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out;
+  -moz-transition: -webkit-transform 0.25s ease-in-out;
+  -ms-transition: -webkit-transform 0.25s ease-in-out;
+  @include media(1199px) {
+    background-color: #fff;
+  }
+}
+// create animation for when menu is fixed
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+@include keyframes (fadeInDown) {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+/* header end */

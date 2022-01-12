@@ -1,0 +1,104 @@
+/* reset css start */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+$heading-font: 'Poppins', sans-serif;
+$para-font: 'Poppins', sans-serif;
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: $para-font;
+  color: $para-color;
+  font-size: rem(15px);
+  padding: 0;
+  margin: 0;
+  font-weight: 400;
+  position: relative;
+  line-height: 1.7;
+  background-color: $body-bg;
+  @include transition(all 0.5s);
+  overflow-x: hidden;
+  @extend %transition;
+  counter-reset: section;
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #f2f2f2;
+  }
+  &::-webkit-scrollbar-thumb {
+    @extend %base-color;
+    border-radius: 20px;
+    border: 2px solid #f2f2f2;
+  }
+}
+@include keyframes(spinRoll) {
+  from {
+    @include transform(rotate(0deg));
+  }
+  to {
+    @include transform(rotate(360deg));
+  }
+}
+img {
+  max-width: 100%;
+  height: auto;
+  user-select: none;
+}
+select {
+  cursor: pointer;
+}
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+button {
+  cursor: pointer;
+}
+*:focus {
+  outline: none;
+}
+button {
+  border: none;
+}
+button:focus {
+  outline: none;
+}
+span {
+  display: inline-block;
+}
+a:hover {
+  color: $base-color;
+}
+hr {
+  background-color: $border-color;
+  opacity: 0.65;
+}
+.page-scroll-bar {
+  position: fixed;
+  left: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 2px;
+  border: none;
+  background: transparent;
+  z-index: 99;
+  &::-webkit-progress-bar {
+    background: transparent;
+  }
+  &::-webkit-progress-value {
+    background: linear-gradient(to left, #db38b5, #01b3e3, #25ce7b, #fdc741, #ff6b01, $base-color);
+
+    background-attachment: fixed;
+  }
+  &::-moz-progress-bar {
+    background: linear-gradient(to left, #db38b5, #01b3e3, #25ce7b, #fdc741, #ff6b01, $base-color);
+
+    background-attachment: fixed;
+  }
+}
+/* reset css end */

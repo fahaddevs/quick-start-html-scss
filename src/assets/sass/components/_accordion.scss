@@ -1,0 +1,52 @@
+.faq-single {
+  border-bottom: 1px solid $border-color;
+  &:last-child {
+    border-bottom: none;
+  }
+  &__header {
+    cursor: pointer;
+    padding: 20px;
+    @extend %position-relative;
+    @extend %transition;
+    &::after {
+      @extend %position-absolute;
+      content: "\f067";
+      top: 21px;
+      right: 20px;
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      @extend %transition;
+      font-size: rem(14px);
+    }
+  }
+  &__content {
+    display: none;
+    padding: 20px;
+  }
+  &__title {
+    font-size: rem(16px);
+    @extend %transition;
+    padding-right: 20px;
+    font-weight: 500;
+    @include media(420px) {
+      font-size: rem(16px);
+    }
+  }
+  &.active {
+    .faq-single__header {
+      @extend %base-color-two;
+    }
+    .faq-single__title {
+      @extend %text-white;
+    }
+    .faq-single__content {
+      background-color: #f6f5ef80;
+    }
+    .faq-single__header {
+      &::after {
+        @include transform(rotate(45deg));
+        @extend %text-white;
+      }
+    }
+  }
+}

@@ -1,0 +1,246 @@
+/* button css start */
+button {
+  &:focus {
+    outline: none;
+  }
+}
+// BS defualt btn style
+[class*="btn--"]:not(.btn--link, .btn--light) {
+  @extend %text-white;
+}
+.btn {
+  padding: rem(12px) rem(30px);
+  font-weight: 500;
+  &:focus {
+    box-shadow: none;
+  }
+}
+.btn--primary {
+  background-color: $primary;
+  &:hover {
+    background-color: darken($primary, 5%);
+  }
+}
+.btn--secondary {
+  background-color: $secondary;
+  &:hover {
+    background-color: darken($secondary, 5%);
+  }
+}
+.btn--success {
+  background-color: $success;
+  &:hover {
+    background-color: darken($success, 5%);
+  }
+}
+.btn--danger {
+  background-color: $danger;
+  &:hover {
+    background-color: darken($danger, 5%);
+  }
+}
+.btn--warning {
+  background-color: $warning;
+  &:hover {
+    background-color: darken($warning, 5%);
+  }
+}
+.btn--info {
+  background-color: $info;
+  &:hover {
+    background-color: darken($info, 5%);
+  }
+}
+.btn--light {
+  background-color: $light;
+  &:hover {
+    background-color: darken($light, 5%);
+  }
+}
+.btn--dark {
+  background-color: $dark;
+  @extend %text-white;
+  &:hover {
+    background-color: darken($dark, 5%);
+    @extend %text-white;
+  }
+}
+.btn--link {
+  color: $primary;
+}
+.btn--base {
+  @extend %bg-gradi;
+  @extend %text-white;
+  &:hover {
+    background-color: darken($base-color, 5%);
+    @extend %text-white;
+  }
+}
+.read-more-btn {
+  @extend %text-base;
+  @extend %position-relative;
+  @extend %z-index-p;
+  &:hover {
+    &::before {
+      height: 100%;
+    }
+  }
+  &::before {
+    @extend %position-absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    @extend %w-100;
+    height: 4px;
+    @extend %base-color;
+    opacity: 0.25;
+    @extend %z-index-c;
+    @extend %transition;
+  }
+}
+.btn-outline--primary {
+  color: $primary;
+  border-color: $primary;
+  &:hover {
+    background-color: $primary;
+    @extend %text-white;
+  }
+}
+.btn-outline--secondary {
+  color: $secondary;
+  border-color: $secondary;
+  &:hover {
+    background-color: $secondary;
+    @extend %text-white;
+  }
+}
+.btn-outline--success {
+  color: $success;
+  border-color: $success;
+  &:hover {
+    background-color: $success;
+    @extend %text-white;
+  }
+}
+.btn-outline--danger {
+  color: $danger;
+  border-color: $danger;
+  &:hover {
+    background-color: $danger;
+    @extend %text-white;
+  }
+}
+.btn-outline--warning {
+  color: $warning;
+  border-color: $warning;
+  &:hover {
+    background-color: $warning;
+    @extend %text-white;
+  }
+}
+.btn-outline--info {
+  color: $info;
+  border-color: $info;
+  &:hover {
+    background-color: $info;
+    @extend %text-white;
+  }
+}
+.btn-outline--light {
+  color: $light;
+  border-color: $light;
+  &:hover {
+    background-color: $light;
+    @extend %text-white;
+  }
+}
+.btn-outline--dark {
+  color: $dark;
+  border-color: $dark;
+  &:hover {
+    background-color: $dark;
+    @extend %text-white;
+  }
+}
+.btn-outline--base {
+  color: $base-color;
+  border: 1px solid $base-color;
+  &:hover {
+    background-color: $base-color;
+    @extend %text-white;
+  }
+}
+.btn-shadow--primary {
+  box-shadow: 0 0 6px 1px rgba($primary, 0.35);
+}
+.btn-shadow--secondary {
+  box-shadow: 0 0 6px 1px rgba($secondary, 0.35);
+}
+.btn-shadow--success {
+  box-shadow: 0 0 6px 1px rgba($success, 0.35);
+}
+.btn-shadow--danger {
+  box-shadow: 0 0 6px 1px rgba($danger, 0.35);
+}
+.btn-shadow--warning {
+  box-shadow: 0 0 6px 1px rgba($warning, 0.35);
+}
+.btn-shadow--info {
+  box-shadow: 0 0 6px 1px rgba($info, 0.35);
+}
+.btn-shadow--light {
+  box-shadow: 0 0 6px 1px rgba($light, 0.35);
+}
+.btn-shadow--dark {
+  box-shadow: 0 0 6px 1px rgba($dark, 0.35);
+}
+.btn-shadow--base {
+  box-shadow: 0 0 6px 1px rgba($base-color, 0.35);
+}
+.btn--capsule {
+  @include border-radius(999px);
+}
+.icon-btn {
+  width: rem(30px);
+  height: rem(30px);
+  background-color: $base-color;
+  @extend %text-white;
+  @include border-radius(3px);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    @extend %text-white;
+  }
+}
+.btn--group {
+  @extend %d-flex;
+  @extend %align-center;
+  margin-left: rem(-10px);
+  margin-right: rem(-10px);
+  &.style--two {
+    margin-left: rem(-5px);
+    margin-right: rem(-5px);
+    *[class*="btn"] {
+      margin: rem(3px) rem(5px);
+    }
+  }
+}
+*[class*="btn"] {
+  margin: rem(5px) rem(10px);
+  align-items: center;
+  &.d-flex {
+    padding: rem(8px) rem(35px);
+  }
+}
+[class*="btn"] {
+  &.btn-md {
+    padding: rem(10px) rem(20px);
+    font-size: rem(15px);
+  }
+  &.btn-sm {
+    padding: rem(6px) rem(10px);
+    font-size: rem(14px);
+  }
+}
+/* button css end */

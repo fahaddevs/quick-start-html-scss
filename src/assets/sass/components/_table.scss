@@ -1,0 +1,141 @@
+/* table css start */
+.custom--table {
+  thead {
+    background-color: #f6f9fc;
+    th {
+      border-top: 1px solid #e9ecef !important;
+      border-bottom: 1px solid #e9ecef !important;
+      padding: rem(12px) rem(20px);
+      color: #7991ad;
+      font-size: rem(14px);
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: 500;
+      vertical-align: middle;
+      &:first-child {
+        text-align: left;
+      }
+      &:last-child {
+        text-align: right;
+      }
+    }
+  }
+  tbody {
+    td {
+      border-top: none;
+      border-bottom: 1px solid rgba(#000, 0.08);
+      padding: 15px 20px;
+      color: $para-color;
+      text-align: center;
+      vertical-align: middle;
+      &:first-child {
+        text-align: left;
+      }
+      &:last-child {
+        text-align: right;
+      }
+    }
+    tr {
+      &:last-child {
+        td {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}
+
+// table responsive
+[data-label] {
+  position: relative;
+  &::before {
+    position: absolute;
+    content: attr(data-label);
+    font-weight: 700;
+    @extend %text-h;
+    top: 0;
+    left: 0;
+    padding: rem(13px) rem(15px);
+    display: none;
+    font-size: rem(14px);
+  }
+}
+.table-responsive--md {
+  @include media(991px) {
+    thead {
+      display: none;
+    }
+    tbody {
+      tr {
+        &:nth-child(odd) {
+          background-color: darken(#fff, 4%);
+        }
+        &:last-child {
+          td {
+            border-top: 1px solid rgba(#000, 0.08);
+          }
+        }
+        td {
+          padding-right: 15px;
+          &:last-child {
+            padding-right: 15px;
+          }
+        }
+      }
+    }
+    tr {
+      th,
+      td {
+        display: block;
+        padding-left: 45% !important;
+        text-align: right !important;
+        &:first-child {
+          border-top: none !important;
+        }
+      }
+    }
+    [data-label] {
+      &::before {
+        display: block;
+      }
+    }
+  }
+}
+.table-responsive--sm {
+  @include media(767px) {
+    thead {
+      display: none;
+    }
+    tbody {
+      tr {
+        &:nth-child(odd) {
+          background-color: f7f7f7;
+        }
+        td {
+          padding-right: 15px;
+          &:last-child {
+            padding-right: 15px;
+          }
+        }
+      }
+    }
+    tr {
+      th,
+      td {
+        display: block;
+        padding-left: 45% !important;
+        text-align: right !important;
+        border-top: 1px solid rgba(#000000, 0.08) !important;
+        &:first-child {
+          border-top: none !important;
+        }
+      }
+    }
+    [data-label] {
+      &::before {
+        display: block;
+      }
+    }
+  }
+}
+/* table css end */

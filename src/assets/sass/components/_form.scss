@@ -1,0 +1,203 @@
+/* form css start */
+.form-group {
+  margin-bottom: rem(15px);
+}
+.form-control {
+  &:focus {
+    background-color: #fff;
+    border-color: $base-color !important;
+    box-shadow: 0 0 5px rgba($base-color, 0.35);
+    color: #000;
+  }
+}
+.form--control {
+  padding: rem(10px) rem(20px);
+  border: 1px solid $border-color;
+  width: 100%;
+  background-color: #fff;
+  @extend %bs-5;
+  color: #363636;
+  height: rem(55px);
+  @include placeholder(#7c7c7c);
+  &:focus {
+    background-color: #fff;
+    border-color: $base-color !important;
+    box-shadow: 0 0 5px rgba($base-color, 0.35);
+    color: #000;
+  }
+  &.style--dark {
+    background-color: transparent;
+    border-color: rgba(#fff, 0.15);
+    color: #fff;
+  }
+  &[readonly] {
+    background-color: #fafaf7;
+  }
+  &.form-control-md {
+    height: 45px;
+  }
+  &.form-control-sm {
+    height: 35px;
+  }
+}
+input:autofill,
+input:autofill:hover,
+input:autofill:focus,
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: $heading-color;
+  transition: background-color 5000s ease-in-out 0s;
+}
+select {
+  &.style--dark {
+    option {
+      color: #363636;
+    }
+  }
+}
+.custom-icon-field {
+  position: relative;
+  i {
+    position: absolute;
+    top: 15px;
+    left: 12px;
+  }
+  i[class*="la-"] {
+    font-size: rem(25px);
+  }
+  .form--control {
+    padding-left: rem(45px);
+  }
+}
+.select {
+  padding: rem(10px) rem(20px);
+  width: 100%;
+  border: 1px solid darken($border-color, 5%);
+  cursor: pointer;
+  color: $para-color;
+  background-color: #fff;
+  height: rem(50px);
+  @include border-radius(4px);
+  @extend %text-h;
+  option {
+    padding: rem(10px) 0;
+    display: block;
+    border-top: 1px solid #e5e5e5;
+  }
+  &.select--sm {
+    height: rem(35px);
+    font-size: rem(14px);
+    padding: rem(5px);
+  }
+}
+textarea {
+  min-height: rem(150px) !important;
+  resize: none;
+  width: 100%;
+}
+label {
+  color: #000;
+  margin-bottom: rem(10px);
+  font-size: rem(15px);
+  font-weight: 500;
+}
+.input-group > .form--control,
+.input-group > .select {
+  position: relative;
+  flex: 1 1 auto;
+  width: 1%;
+  min-width: 0;
+}
+.input-group {
+  select {
+    background-color: transparent;
+    border: none;
+  }
+}
+.custom--radio {
+  position: relative;
+  padding-left: 0;
+  input[type=radio] {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    cursor: pointer;
+    &:checked {
+      ~ label {
+        &::before {
+          border-width: 2px;
+          border-color: $base-color;
+        }
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  label {
+    margin-bottom: 0;
+    position: relative;
+    padding-left: 20px;
+    font-size: rem(14px);
+    font-weight: 400;
+    &::before {
+      position: absolute;
+      content: '';
+      top: 4px;
+      left: 0;
+      width: 15px;
+      height: 15px;
+      border: 1px solid #888888;
+      @include border-radius(50%);
+      @include transition(all 0.3s);
+    }
+    &::after {
+      position: absolute;
+      content: '';
+      top: 8px;
+      left: 4px;
+      width: 7px;
+      height: 7px;
+      background-color: $base-color;
+      @include border-radius(50%);
+      opacity: 0;
+      @include transition(all 0.3s);
+    }
+  }
+}
+.custom--checkbox {
+  padding-left: rem(25px);
+  input {
+    display: none;
+    &:checked {
+      ~ label {
+        &::before {
+          content: "\f14a";
+          color: $base-color;
+        }
+      }
+    }
+  }
+  label {
+    position: relative;
+    font-size: rem(15px);
+    font-weight: 400;
+    cursor: pointer;
+    margin-bottom: 0;
+    &::before {
+      position: absolute;
+      content: "\f04d";
+      font-family: 'Line Awesome Free';
+      font-weight: 900;
+      top: 3px;
+      left: rem(-25px);
+      font-size: rem(20px);
+      line-height: 1;
+      @extend %transition;
+    }
+  }
+}
+/* form css end*/

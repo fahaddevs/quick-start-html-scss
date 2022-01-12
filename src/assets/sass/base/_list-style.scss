@@ -1,0 +1,121 @@
+.check-list {
+  li + li {
+    margin-top: rem(15px);
+  }
+  li {
+    position: relative;
+    padding-left: rem(35px);
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-family: 'Line Awesome Free';
+      font-weight: 900;
+      content: "\f058";
+      font-size: rem(28px);
+      color: $base-color;
+      margin-right: rem(8px);
+      line-height: 1;
+    }
+  }
+}
+.number-list {
+  list-style: decimal;
+  padding-left: rem(18px);
+  li + li {
+    margin-top: rem(10px);
+  }
+}
+.disc-list {
+  li + li {
+    margin-top: rem(10px);
+  }
+  li {
+    position: relative;
+    padding-left: rem(15px);
+    &::before {
+      position: absolute;
+      content: '';
+      top: 50%;
+      left: 0;
+      width: rem(6px);
+      height: rem(6px);
+      margin-top: rem(-3px);
+      @include border-radius(50%);
+      background-color: #575757;
+    }
+  }
+}
+.caption-list {
+  li {
+    display: flex;
+    flex-wrap: wrap;
+    padding: rem(10px) 0;
+    font-size: rem(15px);
+    border-bottom: 1px dashed $border-color;
+    &:first-child {
+      padding-top: 0;
+    }
+    &:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    .caption {
+      width: 40%;
+      font-family: $heading-font;
+      font-weight: 700;
+      font-size: rem(14px);
+      position: relative;
+      @extend %text-h;
+      &::after {
+        position: absolute;
+        content: ':';
+        top: 0;
+        right: 0;
+      }
+    }
+    .value {
+      width: 60%;
+      padding-left: rem(15px);
+    }
+  }
+}
+.caption-list-two {
+  padding: rem(10px) rem(15px);
+  background-color: rgba($base-color, 0.1);
+  @include border-radius(5px);
+  li {
+    font-family: $heading-font;
+    font-weight: 500;
+    color: $heading-color;
+    font-size: rem(14px);
+    padding: rem(8px) 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border-bottom: 1px dashed darken($border-color, 10%);
+    &:first-child {
+      padding-top: 0;
+    }
+    &:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    .caption {
+      width: 20%;
+      position: relative;
+      font-weight: 700;
+      padding-right: 10px;
+      &::after {
+        position: absolute;
+        content: ':';
+        top: 0;
+        right: 0;
+      }
+    }
+    .value {
+      width: 80%;
+      padding-left: 20px;
+    }
+  }
+}
